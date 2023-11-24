@@ -1,0 +1,48 @@
+@import "@antmjs/vantui/es/style/base";
+
+@assets: "https://cloud1-8glf6u7jd450aa57-1306159225.tcloudbaseapp.com/communityApp/";
+@pageBg: #fafcff;
+@pageSpace: 12px;
+@cardRadius: 4px;
+
+@tabBarHeight: 48px;
+
+//重置van变量
+@cell-group-inset-border-radius: @cardRadius * 2;
+@cell-group-inset-padding: 0 @pageSpace * 2 @pageSpace * 2 @pageSpace * 2;
+@cell-horizontal-padding: @pageSpace * 2;
+@dropdown-menu-option-active-color: #0082fd;
+
+.oneLineEllipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+}
+
+.backgroundImg {
+  background-repeat: round;
+  background-position: center top;
+  background-size: cover;
+}
+
+.function {
+  .hsize(@size) {
+    return: ~"calc(@{size}vmin / 3.75)";
+  }
+}
+
+.safePaddingTop {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+.safePaddingBottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}

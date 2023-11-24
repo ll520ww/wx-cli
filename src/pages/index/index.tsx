@@ -1,20 +1,9 @@
-import {useEffect} from "react";
-import {getArticleList} from "@/services";
-import './index.less'
+import  styles from "./index.module.less"
 
 export default function Index() {
 
-
-
-  useEffect(() => {
-    const fn=async () =>{
-     const data= await getArticleList({})
-    }
-    fn()
-  }, []);
-
   return (
-    <div className='index'>
+    <div className={styles.Index}>
       <div>Hello world!</div>
     </div>
   )
