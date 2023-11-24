@@ -26,3 +26,5 @@ declare namespace NodeJS {
   }
 }
 
+declare var wx
+
