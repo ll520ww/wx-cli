@@ -4,8 +4,7 @@ import {
   setStorageSync,
   showToast,
 } from "@tarojs/taro";
-import { config } from "@/utils/config";
-import { UserModel } from "@/models/user";
+import {config} from "@/utils/config";
 
 interface Options {
   ignoreError?: boolean;
@@ -26,7 +25,8 @@ export const noPaging: PaginationParams = {
 
 const makeRequest = (option: Options): Promise<any> => {
   return new Promise((resolve, reject) => {
-    const options = { ...option };
+    const options:any = { ...option };
+    options.url = options.url.replace("/api", config.apiDomain);
     // 获取本地存储的token  这里使用静态的方式去存储 测试
     options.header = options.header || {
       logonType: "weapp",
@@ -69,10 +69,8 @@ const makeRequest = (option: Options): Promise<any> => {
 export const getRequest = (
   url: string,
   params?: Options["params"],
-  options: Options = {} as any
 ) => {
   return makeRequest({
-    ...options,
     url,
     params: params || ({} as any),
     method: "GET",

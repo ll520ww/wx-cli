@@ -1,16 +1,21 @@
-import { View, Text } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
+import {useEffect} from "react";
+import {getArticleList} from "@/services";
 import './index.less'
 
 export default function Index() {
 
-  useLoad(() => {
-    console.log('Page loaded.')
-  })
+
+
+  useEffect(() => {
+    const fn=async () =>{
+     const data= await getArticleList({})
+    }
+    fn()
+  }, []);
 
   return (
-    <View className='index'>
-      <Text>Hello world!</Text>
-    </View>
+    <div className='index'>
+      <div>Hello world!</div>
+    </div>
   )
 }
